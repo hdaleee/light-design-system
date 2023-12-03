@@ -13,15 +13,15 @@ export type TextProps = {
 function Text({ content, overrideCss, styleTheme = 'bodyNormal', useRem = true }: TextProps) {
   return (
     <ThemeProvider theme={ldsTheme}>
-      <StyledText styleTheme={styleTheme} useRem={useRem} style={overrideCss}>
+      <StyledText $styleTheme={styleTheme} $useRem={useRem} style={overrideCss}>
         {content}
       </StyledText>
     </ThemeProvider>
   );
 }
 
-const StyledText = styled.div<{ styleTheme: TextStyleThemeType; useRem: boolean }>`
-  ${({ styleTheme }) => {
+const StyledText = styled.div<{ $styleTheme: TextStyleThemeType; $useRem: boolean }>`
+  ${({ $styleTheme }) => {
     return {
       headerBold: TextStyleCss.HeaderBold,
       headerNormal: TextStyleCss.headerNormal,
@@ -29,7 +29,7 @@ const StyledText = styled.div<{ styleTheme: TextStyleThemeType; useRem: boolean 
       bodyBold: TextStyleCss.bodyBold,
       bodyNormal: TextStyleCss.bodyNormal,
       bodyLighter: TextStyleCss.bodyLighter,
-    }[styleTheme];
+    }[$styleTheme];
   }}
 `;
 
