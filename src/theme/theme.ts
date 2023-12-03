@@ -1,4 +1,4 @@
-import { SpacingSizeType } from 'types';
+import { SpacingSizeType } from 'types/types';
 
 const spacing: Record<SpacingSizeType, string> = {
   spacing_a: '4px',

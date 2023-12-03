@@ -1,7 +1,7 @@
 import { SpacingStyleCss } from 'css';
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
 import { ldsTheme } from 'theme';
-import { SpacingSizeType, SpacingType } from 'types';
+import { SpacingSizeType, SpacingType } from 'types/types';
 
 export type SpacingProps = {
   overrideCss?: CSSProperties;

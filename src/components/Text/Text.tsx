@@ -1,7 +1,7 @@
 import { TextStyleCss } from 'css';
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
 import { ldsTheme } from 'theme';
-import { TextStyleThemeType } from 'types';
+import { TextStyleThemeType } from 'types/types';
 
 export type TextProps = {
   content: string;
