@@ -1,7 +1,7 @@
-import { SpacingStyleCss } from 'css';
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { ldsTheme } from 'theme';
-import { SpacingSizeType, SpacingType } from 'types/types';
+import { SpacingSizeType, SpacingType, spacing } from 'types';
+
+import { HorizontalTypeCss, VerticalTypeCss } from './SpacingStyleCss';
 
 export type SpacingProps = {
   overrideCss?: CSSProperties;
@@ -13,15 +13,15 @@ export type SpacingProps = {
 function Spacing({ overrideCss, size = 'spacing_d', spacingType = 'horizontal', useRem = false }: SpacingProps) {
   const spacingSize = useRem ? (`spacing_${size.charAt(size.length - 1).toUpperCase()}` as SpacingSizeType) : size;
   return (
-    <ThemeProvider theme={ldsTheme}>
+    <ThemeProvider theme={spacing}>
       <StyledSpacing size={spacingSize} style={overrideCss} $spacingType={spacingType} />
     </ThemeProvider>
   );
 }
 
-const StyledSpacing = styled.div<{ size: string; $spacingType: SpacingType }>`
+const StyledSpacing = styled.div<{ size: SpacingSizeType; $spacingType: SpacingType }>`
   ${({ $spacingType }) => {
-    return { vertical: SpacingStyleCss.VerticalTypeCss, horizontal: SpacingStyleCss.HorizontalTypeCss }[$spacingType];
+    return { vertical: VerticalTypeCss, horizontal: HorizontalTypeCss }[$spacingType];
   }};
 `;
 

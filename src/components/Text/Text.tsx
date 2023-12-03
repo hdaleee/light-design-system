@@ -1,7 +1,7 @@
-import { TextStyleCss } from 'css';
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { ldsTheme } from 'theme';
-import { TextStyleThemeType } from 'types/types';
+import { TextStyleThemeType, spacing } from 'types';
+
+import { headerBold, headerNormal, headerLighter, bodyBold, bodyNormal, bodyLighter } from './TextStyleCss';
 
 export type TextProps = {
   content: string;
@@ -12,7 +12,7 @@ export type TextProps = {
 
 function Text({ content, overrideCss, styleTheme = 'bodyNormal', useRem = true }: TextProps) {
   return (
-    <ThemeProvider theme={ldsTheme}>
+    <ThemeProvider theme={spacing}>
       <StyledText $styleTheme={styleTheme} $useRem={useRem} style={overrideCss}>
         {content}
       </StyledText>
@@ -23,12 +23,12 @@ function Text({ content, overrideCss, styleTheme = 'bodyNormal', useRem = true }
 const StyledText = styled.div<{ $styleTheme: TextStyleThemeType; $useRem: boolean }>`
   ${({ $styleTheme }) => {
     return {
-      headerBold: TextStyleCss.HeaderBold,
-      headerNormal: TextStyleCss.headerNormal,
-      headerLighter: TextStyleCss.headerLighter,
-      bodyBold: TextStyleCss.bodyBold,
-      bodyNormal: TextStyleCss.bodyNormal,
-      bodyLighter: TextStyleCss.bodyLighter,
+      headerBold,
+      headerNormal,
+      headerLighter,
+      bodyBold,
+      bodyNormal,
+      bodyLighter,
     }[$styleTheme];
   }}
 `;
