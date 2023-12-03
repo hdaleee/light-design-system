@@ -1,0 +1,12 @@
+/.storybook
+/node_modules
+/lib
+/node_modules
+/src
+.babelrc
+.eslintrc
+.gitignore
+.npmignore
+.prettierrc
+index.ts
+tsconfig.json
