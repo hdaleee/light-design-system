@@ -93,7 +93,7 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc",
     "prepare": "npm run build | husky install",
-    "storybook": "sb dev",
+    "storybook": "sb dev -p 6006",
     "build-storybook": "sb build"
   },
   "types": "dist/index.d.ts",
