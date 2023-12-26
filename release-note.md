@@ -1,8 +1,7 @@
 # light-design-system release notes
 
-## [v0.1.17]
+## [v0.1.18]
 
 ### Component
 
-    * add css-loader
-    * add style-loader
+    * add eslint version update to 14
