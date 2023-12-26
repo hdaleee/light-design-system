@@ -7,20 +7,23 @@ export type TextProps = {
   content: string;
   overrideCss?: CSSProperties;
   styleTheme?: TextStyleThemeType;
+  width?: 'auto' | 'fit-content';
   useRem?: boolean;
 };
 
-function Text({ content, overrideCss, styleTheme = 'bodyNormal', useRem = true }: TextProps) {
+function Text({ content, overrideCss, styleTheme = 'bodyNormal', width = 'auto', useRem = true }: TextProps) {
   return (
     <ThemeProvider theme={spacing}>
-      <StyledText $styleTheme={styleTheme} $useRem={useRem} style={overrideCss}>
+      <StyledText $styleTheme={styleTheme} $useRem={useRem} $width={width} style={overrideCss}>
         {content}
       </StyledText>
     </ThemeProvider>
   );
 }
 
-const StyledText = styled.div<{ $styleTheme: TextStyleThemeType; $useRem: boolean }>`
+const StyledText = styled.div<{ $styleTheme: TextStyleThemeType; $useRem: boolean; $width: 'auto' | 'fit-content' }>`
+  width: ${({ $width }) => $width};
+
   ${({ $styleTheme }) => {
     return {
       headerBold,

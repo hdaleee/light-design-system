@@ -7,14 +7,18 @@ export default {
     content: {
       control: 'text',
     },
-    overrideCss: { control: 'object' },
     styleTheme: {
       control: 'radio',
       option: ['headerBold', 'headerNormal', 'headerLighter', 'bodyBold', 'bodyNormal', 'bodyLighter'],
     },
+    width: {
+      control: 'select',
+      option: ['auto', 'fit-content'],
+    },
     useRem: {
       control: 'boolean',
     },
+    overrideCss: { control: 'object' },
   },
 };
 
@@ -26,6 +30,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   content: 'content',
-  overrideCss: { color: 'coral' },
+  overrideCss: { color: 'coral', border: 'coral 1px solid' },
   styleTheme: 'headerBold',
 };
