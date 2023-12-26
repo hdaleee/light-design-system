@@ -1,7 +1,7 @@
 # light-design-system release notes
 
-## [v0.1.19]
+## [v0.1.20]
 
 ### Component
 
-    * remove baseUrl
+    * fix storybook compile error
