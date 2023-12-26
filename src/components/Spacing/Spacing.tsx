@@ -1,5 +1,5 @@
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { SpacingSizeType, SpacingType, spacing } from 'types';
+import { SpacingSizeType, SpacingType, spacing } from '../../types';
 
 import { HorizontalTypeCss, VerticalTypeCss } from './SpacingStyleCss';
 

@@ -1,5 +1,5 @@
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { TextStyleThemeType, spacing } from 'types';
+import { TextStyleThemeType, spacing } from '../../types';
 
 import { headerBold, headerNormal, headerLighter, bodyBold, bodyNormal, bodyLighter } from './TextStyleCss';
 

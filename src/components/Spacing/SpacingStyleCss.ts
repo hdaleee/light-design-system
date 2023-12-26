@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { SpacingSizeType, spacing } from 'types';
+import { SpacingSizeType, spacing } from '../../types';
 
 export const HorizontalTypeCss = css<{ size: SpacingSizeType }>`
   width: ${({ size }) => spacing[size]};

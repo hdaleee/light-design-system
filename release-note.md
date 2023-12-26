@@ -1,7 +1,7 @@
 # light-design-system release notes
 
-## [v0.1.18]
+## [v0.1.19]
 
 ### Component
 
-    * add eslint version update to 14
+    * remove baseUrl
