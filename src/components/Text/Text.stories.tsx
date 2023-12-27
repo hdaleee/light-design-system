@@ -8,7 +8,7 @@ export default {
       control: 'text',
     },
     styleTheme: {
-      control: 'radio',
+      control: 'select',
       option: ['headerBold', 'headerNormal', 'headerLighter', 'bodyBold', 'bodyNormal', 'bodyLighter'],
     },
     width: {

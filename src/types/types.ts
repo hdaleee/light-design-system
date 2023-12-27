@@ -116,3 +116,7 @@ export const spacing: Record<SpacingSizeType, string> = {
   spacing_Y: '6.25rem',
   spacing_Z: '6.5rem',
 };
+
+export type RatioType = '1_1' | '3_4' | '9_16' | '4_3' | '16_9';
+
+export type PositionType = 'bottom' | 'top' | 'center' | 'left' | 'right';

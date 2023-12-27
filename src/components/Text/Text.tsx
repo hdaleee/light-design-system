@@ -5,13 +5,19 @@ import { headerBold, headerNormal, headerLighter, bodyBold, bodyNormal, bodyLigh
 
 export type TextProps = {
   content: string;
-  overrideCss?: CSSProperties;
   styleTheme?: TextStyleThemeType;
   width?: 'auto' | 'fit-content';
+  overrideCss?: CSSProperties;
   useRem?: boolean;
 };
 
-function Text({ content, overrideCss, styleTheme = 'bodyNormal', width = 'auto', useRem = true }: TextProps) {
+/**
+ * @param content string
+ * @param styleTheme 'headerBold' | 'headerNormal' | 'headerLighter' | 'bodyBold' | 'bodyNormal' | 'bodyLighter'
+ * @param width 'auto' | 'fit-content'
+ * @param overrideCss css object type
+ * @param useRem default value is false, it means using 'px' */
+function Text({ content, styleTheme = 'bodyNormal', width = 'auto', overrideCss, useRem = true }: TextProps) {
   return (
     <ThemeProvider theme={spacing}>
       <StyledText $styleTheme={styleTheme} $useRem={useRem} $width={width} style={overrideCss}>
