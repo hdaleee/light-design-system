@@ -1,7 +1,7 @@
 # light-design-system release notes
 
-## [v0.1.23]
+## [v0.1.24]
 
 ### Component
 
-    * feature video player
+    * update video player folder name
