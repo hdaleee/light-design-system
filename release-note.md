@@ -1,7 +1,7 @@
 # light-design-system release notes
 
-## [v0.1.22]
+## [v0.1.23]
 
 ### Component
 
-    * export Image component
+    * feature video player
