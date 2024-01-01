@@ -1,1 +1,1 @@
-export { Spacing, Text } from './src/components';
+export * from './src/components';
