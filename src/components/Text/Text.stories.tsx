@@ -3,6 +3,7 @@ import Text, { TextProps } from './Text';
 export default {
   title: 'Text',
   component: Text,
+  tags: ['autodocs'],
   argTypes: {
     content: {
       control: 'text',
