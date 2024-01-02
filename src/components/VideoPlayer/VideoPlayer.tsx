@@ -1,4 +1,4 @@
-import { VideoHTMLAttributes } from 'react';
+import { VideoHTMLAttributes, useEffect, useRef } from 'react';
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
 import { RatioType, spacing } from '../../types';
 
@@ -30,12 +30,28 @@ function VideoPlayer({
   overrideAttribute,
   overrideCss,
 }: VideoProps) {
+  const playerRef = useRef<HTMLVideoElement | null>(null);
+
   const rate = ratio.split('_');
   const height = (width * Number(rate[1])) / Number(rate[0]);
+
+  useEffect(() => {
+    playerRef.current?.load();
+  }, [src]);
+
   return (
     <ThemeProvider theme={spacing}>
       <StyledVideo $width={width} $height={height} $ratio={ratio} style={overrideCss}>
-        <video controls width={width} height={height} playsInline poster={poster} autoPlay muted {...overrideAttribute}>
+        <video
+          ref={playerRef}
+          controls
+          width={width}
+          height={height}
+          playsInline
+          poster={poster}
+          autoPlay
+          muted
+          {...overrideAttribute}>
           <source src={src} type={type} />
           <track kind="captions" />
         </video>
