@@ -117,6 +117,12 @@ export const spacing: Record<SpacingSizeType, string> = {
   spacing_Z: '6.5rem',
 };
 
+export const colors: Record<string, string> = {
+  light_gray_f0: '#f0f0f0',
+  light_gray_a0: '#a0a0a0',
+  white: '#ffffff',
+};
+
 export type RatioType = '1_1' | '3_4' | '9_16' | '4_3' | '16_9';
 
 export type PositionType = 'bottom' | 'top' | 'center' | 'left' | 'right';

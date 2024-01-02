@@ -1,5 +1,6 @@
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
 import { SpacingSizeType, SpacingType, spacing } from '../../types';
+import { lastCharToUpperCase } from '../../utils';
 
 import { HorizontalTypeCss, VerticalTypeCss } from './SpacingStyleCss';
 
@@ -16,7 +17,7 @@ export type SpacingProps = {
  * @param overrideCss css object type
  * @param useRem default value is false, it means using 'px' */
 function Spacing({ size = 'spacing_d', spacingType = 'horizontal', overrideCss, useRem = false }: SpacingProps) {
-  const spacingSize = useRem ? (`spacing_${size.charAt(size.length - 1).toUpperCase()}` as SpacingSizeType) : size;
+  const spacingSize = useRem ? (lastCharToUpperCase(size) as SpacingSizeType) : size;
   return (
     <ThemeProvider theme={spacing}>
       <StyledSpacing size={spacingSize} style={overrideCss} $spacingType={spacingType} />
