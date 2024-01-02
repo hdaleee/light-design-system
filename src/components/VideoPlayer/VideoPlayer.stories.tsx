@@ -3,9 +3,11 @@ import VideoPlayer, { VideoProps } from './VideoPlayer';
 export default {
   title: 'Video',
   component: VideoPlayer,
+  tags: ['autodocs'],
   argTypes: {
     src: {
       control: 'text',
+      description: 'https://gist.github.com/jsturgis/3b19447b304616f18657',
     },
     width: {
       control: 'number',

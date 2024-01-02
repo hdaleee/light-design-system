@@ -3,6 +3,7 @@ import Spacing, { SpacingProps } from './Spacing';
 export default {
   title: 'Spacing',
   component: Spacing,
+  tags: ['autodocs'],
   argTypes: {
     overrideCss: { control: 'object' },
     size: {

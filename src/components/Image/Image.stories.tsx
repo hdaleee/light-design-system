@@ -3,6 +3,7 @@ import Image, { ImageProps } from './Image';
 export default {
   title: 'Image',
   component: Image,
+  tags: ['autodocs'],
   argTypes: {
     url: {
       control: 'text',
