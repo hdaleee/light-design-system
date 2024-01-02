@@ -1,8 +1,7 @@
 # light-design-system release notes
 
-## [v0.1.25]
+## [v0.1.26]
 
 ### Component
 
-    * add ref in video player for rerender when src changed.
-    * add auto docs in storybook.
+    * feature switch component
