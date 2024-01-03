@@ -7,6 +7,7 @@ export type TextStyleThemeType =
   | 'bodyLighter'; // 1rem
 
 export type SpacingType = 'vertical' | 'horizontal';
+export type SizeType = 'small' | 'normal' | 'large';
 
 export type SpacingSizeType =
   | 'spacing_a'
@@ -119,6 +120,7 @@ export const spacing: Record<SpacingSizeType, string> = {
 
 export const colors: Record<string, string> = {
   light_gray_f0: '#f0f0f0',
+  light_gray_e0: '#e0e0e0',
   light_gray_a0: '#a0a0a0',
   white: '#ffffff',
 };
