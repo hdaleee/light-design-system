@@ -1,12 +1,11 @@
 # light-design-system release notes
 
-## [v0.1.27]
+## [v0.1.28]
 
 ### Component
 
-#### Fixes
+    * Add Switch prop onClick
+    * Add Text prop ellipsisMode
+    * Feat dropdown
 
-    * refactoring
-        - Using 'Transient props' only have to use.
-        - update jsdoc
-        - apply util 'lastCharToUpperCase'
+#### Fixes
