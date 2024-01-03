@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { spacing, colors } from '../../types';
+import { spacing, colors, SizeType } from '../../types';
 import { small, normal, large } from './SwitchStyleCss';
 
 export type SwitchProps = {
   value?: boolean;
   disabled?: boolean;
-  size?: 'small' | 'normal' | 'large';
+  size?: SizeType;
+  onClick?: (value: boolean) => void;
   overrideCss?: { label?: CSSProperties; input?: CSSProperties };
   useRem?: boolean;
 };
@@ -17,7 +18,14 @@ export type SwitchProps = {
  * @param size 'small' | 'normal' | 'large'
  * @param overrideCss object // css object type
  * @param useRem boolean // default value is false, it means using 'px' */
-function Switch({ value = false, disabled = false, size = 'normal', overrideCss, useRem = false }: SwitchProps) {
+function Switch({
+  value = false,
+  disabled = false,
+  size = 'normal',
+  onClick,
+  overrideCss,
+  useRem = false,
+}: SwitchProps) {
   const [switchValue, setSwitchValue] = useState<boolean>(value);
 
   useEffect(() => {
@@ -26,6 +34,9 @@ function Switch({ value = false, disabled = false, size = 'normal', overrideCss,
 
   const toggleValue = () => {
     setSwitchValue(prev => !prev);
+    if (onClick) {
+      onClick(!switchValue);
+    }
   };
 
   return (
@@ -38,7 +49,7 @@ function Switch({ value = false, disabled = false, size = 'normal', overrideCss,
           value={switchValue}
           disabled={disabled}
           $useRem={useRem}
-          onClick={toggleValue}
+          onClick={() => toggleValue()}
           style={overrideCss?.input}
         />
       </StyledSwitchLabel>
@@ -51,7 +62,7 @@ const StyledSwitchLabel = styled.label`
   display: flex;
 `;
 
-const StyledSwitchInput = styled.input<{ size: 'small' | 'normal' | 'large'; value: boolean; $useRem: boolean }>`
+const StyledSwitchInput = styled.input<{ size: SizeType; value: boolean; $useRem: boolean }>`
   appearance: none;
   background-color: ${({ theme, value }) => (value ? 'coral' : theme.colors.light_gray_a0)};
   cursor: pointer;

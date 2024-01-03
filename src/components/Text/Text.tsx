@@ -7,6 +7,7 @@ export type TextProps = {
   content: string;
   styleTheme?: TextStyleThemeType;
   width?: 'auto' | 'fit-content';
+  ellipsisMode?: 'use' | 'none';
   overrideCss?: CSSProperties;
   useRem?: boolean;
 };
@@ -15,20 +16,41 @@ export type TextProps = {
  * @param content string
  * @param styleTheme 'headerBold' | 'headerNormal' | 'headerLighter' | 'bodyBold' | 'bodyNormal' | 'bodyLighter'
  * @param width 'auto' | 'fit-content'
+ * @param ellipsisMode 'use' | 'none'
  * @param overrideCss object // css object type
  * @param useRem boolean // default value is false, it means using 'px' */
-function Text({ content, styleTheme = 'bodyNormal', width = 'auto', overrideCss, useRem = true }: TextProps) {
+function Text({
+  content,
+  styleTheme = 'bodyNormal',
+  width = 'auto',
+  ellipsisMode = 'use',
+  overrideCss,
+  useRem = true,
+}: TextProps) {
   return (
     <ThemeProvider theme={spacing}>
-      <StyledText $styleTheme={styleTheme} $useRem={useRem} width={width} style={overrideCss}>
+      <StyledText
+        $styleTheme={styleTheme}
+        $useRem={useRem}
+        width={width}
+        $ellipsisMode={ellipsisMode}
+        style={overrideCss}>
         {content}
       </StyledText>
     </ThemeProvider>
   );
 }
 
-const StyledText = styled.div<{ $styleTheme: TextStyleThemeType; $useRem: boolean; width: 'auto' | 'fit-content' }>`
+const StyledText = styled.div<{
+  $styleTheme: TextStyleThemeType;
+  $useRem: boolean;
+  width: 'auto' | 'fit-content';
+  $ellipsisMode: 'use' | 'none';
+}>`
   width: ${({ width }) => width};
+  overflow: hidden;
+  text-overflow: ${({ $ellipsisMode }) => ($ellipsisMode ? 'ellipsis' : 'unset')};
+  white-space: nowrap;
 
   ${({ $styleTheme }) => {
     return {
