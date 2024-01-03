@@ -13,12 +13,12 @@ export type ImageProps = {
 
 /**
  * @param url string
- * @param width number (px || rem)
+ * @param width number
  * @param ratio '1_1' | '3_4' | '9_16' | '4_3' | '16_9'
  * @param scale 'cover' | 'contain' | 'auto'
  * @param imagePosition 'bottom' | 'top' | 'center' | 'left' | 'right'
- * @param overrideCss css object type
- * @param useRem default value is false, it means using 'px' */
+ * @param overrideCss object // css object type
+ * @param useRem boolean // default value is false, it means using 'px' */
 function Image({
   url,
   width,
@@ -33,11 +33,10 @@ function Image({
   return (
     <ThemeProvider theme={spacing}>
       <StyledImage
-        $url={url}
-        $width={width}
-        $height={height}
-        $ratio={ratio}
-        $scale={scale}
+        $imageUrl={url}
+        width={width}
+        height={height}
+        scale={scale}
         $imagePosition={imagePosition}
         $useRem={useRem}
         style={overrideCss}
@@ -47,21 +46,20 @@ function Image({
 }
 
 const StyledImage = styled.div<{
-  $url: string;
-  $ratio: RatioType;
-  $scale: 'cover' | 'contain' | 'auto';
+  $imageUrl: string;
+  scale: 'cover' | 'contain' | 'auto';
   $imagePosition: PositionType;
   $useRem: boolean;
-  $width: number;
-  $height: number;
+  width: number;
+  height: number;
 }>`
-  background-image: ${({ $url }) => `url(${$url})`};
+  background-image: ${({ $imageUrl }) => `url(${$imageUrl})`};
   background-position: ${({ $imagePosition }) => $imagePosition};
   background-repeat: no-repeat;
-  background-size: ${({ $scale }) => $scale};
+  background-size: ${({ scale }) => scale};
   overflow: hidden;
-  width: ${({ $width, $useRem }) => `${$width}${$useRem ? 'rem' : 'px'}`};
-  height: ${({ $height, $useRem }) => `${$height}${$useRem ? 'rem' : 'px'}`};
+  width: ${({ width, $useRem }) => `${width}${$useRem ? 'rem' : 'px'}`};
+  height: ${({ height, $useRem }) => `${height}${$useRem ? 'rem' : 'px'}`};
 `;
 
 export default Image;

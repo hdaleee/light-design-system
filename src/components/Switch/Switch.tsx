@@ -12,7 +12,11 @@ export type SwitchProps = {
 };
 
 /**
- * @param overrideCss css object type */
+ * @param value boolean // default value is false
+ * @param disabled boolean // default value is false
+ * @param size 'small' | 'normal' | 'large'
+ * @param overrideCss object // css object type
+ * @param useRem boolean // default value is false, it means using 'px' */
 function Switch({ value = false, disabled = false, size = 'normal', overrideCss, useRem = false }: SwitchProps) {
   const [switchValue, setSwitchValue] = useState<boolean>(value);
 
@@ -33,7 +37,7 @@ function Switch({ value = false, disabled = false, size = 'normal', overrideCss,
           size={size}
           value={switchValue}
           disabled={disabled}
-          useRem={useRem}
+          $useRem={useRem}
           onClick={toggleValue}
           style={overrideCss?.input}
         />
@@ -47,7 +51,7 @@ const StyledSwitchLabel = styled.label`
   display: flex;
 `;
 
-const StyledSwitchInput = styled.input<{ size: 'small' | 'normal' | 'large'; value: boolean; useRem: boolean }>`
+const StyledSwitchInput = styled.input<{ size: 'small' | 'normal' | 'large'; value: boolean; $useRem: boolean }>`
   appearance: none;
   background-color: ${({ theme, value }) => (value ? 'coral' : theme.colors.light_gray_a0)};
   cursor: pointer;

@@ -14,12 +14,12 @@ export type VideoProps = {
 
 /**
  * @param src string
- * @param width number (px || rem)
+ * @param width number
  * @param type 'video/mp4' | 'video/ogg' | 'video/webm' | 'video/avi'
  * @param ratio '1_1' | '3_4' | '9_16' | '4_3' | '16_9'
  * @param poster string
- * @param overrideAttribute, video attribute object type
- * @param overrideCss css object type
+ * @param overrideAttribute object // video attribute object type
+ * @param overrideCss object // css object type
  */
 function VideoPlayer({
   src,
@@ -41,7 +41,7 @@ function VideoPlayer({
 
   return (
     <ThemeProvider theme={spacing}>
-      <StyledVideo $width={width} $height={height} $ratio={ratio} style={overrideCss}>
+      <StyledVideo width={width} height={height} style={overrideCss}>
         <video
           ref={playerRef}
           controls
@@ -61,14 +61,13 @@ function VideoPlayer({
 }
 
 const StyledVideo = styled.div<{
-  $ratio: RatioType;
-  $width: number;
-  $height: number;
+  width: number;
+  height: number;
 }>`
   background-color: black;
   overflow: hidden;
-  width: ${({ $width }) => $width}px;
-  height: ${({ $height }) => $height}px;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
 `;
 
 export default VideoPlayer;

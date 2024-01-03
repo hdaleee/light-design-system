@@ -14,8 +14,8 @@ export type SpacingProps = {
 /**
  * @param size spacing_${a to Z}
  * @param spacingType 'vertical' | 'horizontal'
- * @param overrideCss css object type
- * @param useRem default value is false, it means using 'px' */
+ * @param overrideCss object // css object type
+ * @param useRem boolean // default value is false, it means using 'px' */
 function Spacing({ size = 'spacing_d', spacingType = 'horizontal', overrideCss, useRem = false }: SpacingProps) {
   const spacingSize = useRem ? (lastCharToUpperCase(size) as SpacingSizeType) : size;
   return (
