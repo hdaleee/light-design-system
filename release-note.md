@@ -1,12 +1,9 @@
 # light-design-system release notes
 
-## [v0.1.29]
+## [v0.1.30]
 
 ### Component
 
-    * feat Icon - menu
+    * export Icon Component
 
 #### Fixes
-
-    * refactor ThemeProvider
-    * refactor Icon type & storybook argTypes option
