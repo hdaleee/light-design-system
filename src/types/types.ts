@@ -132,6 +132,8 @@ export const iconSize: Record<IconSizeType, string> = {
   large: '48px',
 };
 
+export const iconName: IconNameType[] = ['ic_menu'];
+
 export type RatioType = '1_1' | '3_4' | '9_16' | '4_3' | '16_9';
 
 export type PositionType = 'bottom' | 'top' | 'center' | 'left' | 'right';

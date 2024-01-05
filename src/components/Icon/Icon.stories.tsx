@@ -1,4 +1,4 @@
-import { colors, iconSize } from '../../types';
+import { iconName, colors, iconSize } from '../../types';
 import Icon, { IconProps } from './Icon';
 
 export default {
@@ -7,15 +7,16 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     iconName: {
-      control: 'text',
-    },
-    size: {
-      control: 'inline-radio',
-      options: Object.keys(iconSize),
+      control: 'select',
+      options: iconName,
     },
     color: {
       control: 'inline-radio',
       options: Object.keys(colors),
+    },
+    size: {
+      control: 'inline-radio',
+      options: Object.keys(iconSize),
     },
   },
 };
