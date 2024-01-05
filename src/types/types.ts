@@ -118,13 +118,26 @@ export const spacing: Record<SpacingSizeType, string> = {
   spacing_Z: '6.5rem',
 };
 
-export const colors: Record<string, string> = {
+export const colors: Record<ColorsType, string> = {
+  coral_main: '#ff7f50',
   light_gray_f0: '#f0f0f0',
   light_gray_e0: '#e0e0e0',
   light_gray_a0: '#a0a0a0',
   white: '#ffffff',
 };
 
+export const iconSize: Record<IconSizeType, string> = {
+  small: '24px',
+  medium: '36px',
+  large: '48px',
+};
+
 export type RatioType = '1_1' | '3_4' | '9_16' | '4_3' | '16_9';
 
 export type PositionType = 'bottom' | 'top' | 'center' | 'left' | 'right';
+
+export type ColorsType = 'coral_main' | 'light_gray_f0' | 'light_gray_e0' | 'light_gray_a0' | 'white';
+
+export type IconSizeType = 'small' | 'medium' | 'large';
+
+export type IconNameType = 'ic_menu';
