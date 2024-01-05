@@ -1,6 +1,5 @@
 import styled, { CSSProperties, ThemeProvider } from 'styled-components';
 import { TextStyleThemeType, spacing } from '../../types';
-
 import { headerBold, headerNormal, headerLighter, bodyBold, bodyNormal, bodyLighter } from './TextStyleCss';
 
 export type TextProps = {
@@ -28,7 +27,7 @@ function Text({
   useRem = true,
 }: TextProps) {
   return (
-    <ThemeProvider theme={spacing}>
+    <ThemeProvider theme={{ spacing }}>
       <StyledText
         $styleTheme={styleTheme}
         $useRem={useRem}
