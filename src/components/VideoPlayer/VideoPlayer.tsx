@@ -1,6 +1,6 @@
 import { VideoHTMLAttributes, useEffect, useRef } from 'react';
-import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { RatioType, spacing } from '../../types';
+import styled, { CSSProperties } from 'styled-components';
+import { RatioType } from '../../types';
 
 export type VideoProps = {
   src: string;
@@ -40,23 +40,21 @@ function VideoPlayer({
   }, [src]);
 
   return (
-    <ThemeProvider theme={spacing}>
-      <StyledVideo width={width} height={height} style={overrideCss}>
-        <video
-          ref={playerRef}
-          controls
-          width={width}
-          height={height}
-          playsInline
-          poster={poster}
-          autoPlay
-          muted
-          {...overrideAttribute}>
-          <source src={src} type={type} />
-          <track kind="captions" />
-        </video>
-      </StyledVideo>
-    </ThemeProvider>
+    <StyledVideo width={width} height={height} style={overrideCss}>
+      <video
+        ref={playerRef}
+        controls
+        width={width}
+        height={height}
+        playsInline
+        poster={poster}
+        autoPlay
+        muted
+        {...overrideAttribute}>
+        <source src={src} type={type} />
+        <track kind="captions" />
+      </video>
+    </StyledVideo>
   );
 }
 

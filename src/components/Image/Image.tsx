@@ -1,5 +1,5 @@
-import styled, { CSSProperties, ThemeProvider } from 'styled-components';
-import { RatioType, PositionType, spacing } from '../../types';
+import styled, { CSSProperties } from 'styled-components';
+import { RatioType, PositionType } from '../../types';
 
 export type ImageProps = {
   url: string;
@@ -31,17 +31,15 @@ function Image({
   const rate = ratio.split('_');
   const height = (width * Number(rate[1])) / Number(rate[0]);
   return (
-    <ThemeProvider theme={spacing}>
-      <StyledImage
-        $imageUrl={url}
-        width={width}
-        height={height}
-        scale={scale}
-        $imagePosition={imagePosition}
-        $useRem={useRem}
-        style={overrideCss}
-      />
-    </ThemeProvider>
+    <StyledImage
+      $imageUrl={url}
+      width={width}
+      height={height}
+      scale={scale}
+      $imagePosition={imagePosition}
+      $useRem={useRem}
+      style={overrideCss}
+    />
   );
 }
 

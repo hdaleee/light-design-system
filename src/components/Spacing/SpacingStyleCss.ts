@@ -1,10 +1,10 @@
 import { css } from 'styled-components';
-import { SpacingSizeType, spacing } from '../../types';
+import { SpacingSizeType } from '../../types';
 
 export const HorizontalTypeCss = css<{ size: SpacingSizeType }>`
-  width: ${({ size }) => spacing[size]};
+  width: ${({ theme, size }) => theme.spacing[size]};
 `;
 
 export const VerticalTypeCss = css<{ size: SpacingSizeType }>`
-  height: ${({ size }) => spacing[size]};
+  height: ${({ theme, size }) => theme.spacing[size]};
 `;

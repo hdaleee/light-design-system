@@ -19,7 +19,7 @@ export type SpacingProps = {
 function Spacing({ size = 'spacing_d', spacingType = 'horizontal', overrideCss, useRem = false }: SpacingProps) {
   const spacingSize = useRem ? (lastCharToUpperCase(size) as SpacingSizeType) : size;
   return (
-    <ThemeProvider theme={spacing}>
+    <ThemeProvider theme={{ spacing }}>
       <StyledSpacing size={spacingSize} style={overrideCss} $spacingType={spacingType} />
     </ThemeProvider>
   );
