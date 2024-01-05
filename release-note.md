@@ -1,11 +1,12 @@
 # light-design-system release notes
 
-## [v0.1.28]
+## [v0.1.29]
 
 ### Component
 
-    * Add Switch prop onClick
-    * Add Text prop ellipsisMode
-    * Feat dropdown
+    * feat Icon - menu
 
 #### Fixes
+
+    * refactor ThemeProvider
+    * refactor Icon type & storybook argTypes option
